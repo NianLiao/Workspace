@@ -1,0 +1,9 @@
+{
+  "name": "nianliao-qwen-relay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "年辽的知识工作台 · 千问中转（阿里云函数计算 Web 函数）",
+  "main": "index.js",
+  "scripts": { "start": "node index.js" },
+  "engines": { "node": ">=18" }
+}
