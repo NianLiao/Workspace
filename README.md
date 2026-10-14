@@ -5,7 +5,8 @@
 ## 两种用法
 - **本机**：双击 `index.html`，数据存浏览器 localStorage，零依赖。
 - **网页版**（GitHub Pages 托管 + GitHub Gist 多端同步 + 阿里云函数计算中转千问）：
-  全程步骤见 **[DEPLOY.md](DEPLOY.md)**。
+  全程步骤见 **[DEPLOY.md](DEPLOY.md)**。手机浏览器打开网址 →「添加到主屏幕」即为独立 App；
+  内置 Service Worker 离线缓存，在线取最新、断网照样打开。
 
 ## 五大入口 + 设置
 | 入口 | 用途 |

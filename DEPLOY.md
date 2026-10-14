@@ -38,11 +38,12 @@
 ## 第三步 · GitHub Pages 变成网页（约 5 分钟）
 
 1. GitHub 新建仓库，名字随意（例：`nianliao`），**不要**勾选 README/.gitignore（要上传已有文件夹）。
-2. 仓库页 Add file → **Upload files**，把本文件夹全部内容（含 `index.html`、`css/`、`js/`、`server/`、`.nojekyll`、`README.md`、`DEPLOY.md`）拖进去，提交到 main 分支。
+2. 仓库页 Add file → **Upload files**，把本文件夹**里面的全部条目**（`index.html`、`css/`、`js/`、`server/`、`icons/`、`sw.js`、`manifest.webmanifest`、`.nojekyll`、`README.md`、`DEPLOY.md`）拖进去，提交到 main 分支。
+   ⚠️ 注意层级：要在文件夹**内部**全选这些条目上传，让 `index.html` 位于仓库根目录；直接拖文件夹本身会让网页躲进子路径（根地址 404）。上传前先在资源管理器「查看 → 隐藏的项目」勾上，别漏了 `.nojekyll`。
    （会 git 的话 `git push` 更省事，以后我改完你也可以直接推。）
 3. **Settings → Pages → Source** 选 `Deploy from a branch`，分支 `main / (root)`，Save。
 4. 约一分钟后访问 `https://你的用户名.github.io/nianliao/` —— 这就是你的工作台网址。
-5. 手机浏览器打开它 → 菜单选「**添加到主屏幕**」，获得 App 般体验。
+5. 手机浏览器打开它 → 菜单选「**添加到主屏幕**」→ 即成为独立 App（自带"手稿页"图标，全屏、无地址栏）。已配 Service Worker：**断网或 GitHub 抽风时也能秒开**，在线取最新、离线吃缓存。注意桌面 App 与浏览器标签页各有一套本机设置，装好后在 App 里把设置页四件套（中转地址、模型、Token、Gist ID）填一遍再「拉取云端」，以后固定从 App 进。
 6. 大陆网络提示：GitHub Pages 多数时段可直连（移动网络通常比家用宽带稳）；偶尔抽风时本地那份 `index.html` 依旧可用，数据通过下一步的 Gist 保持一致。
 
 ## 第四步 · 多端同步（约 3 分钟）
@@ -52,7 +53,7 @@
    - 权限只勾 **Contents: Read&write** 之外的 **Gists: Read and write**（越窄越安全）。
 2. 打开工作台的「设置」页 → 同步卡片：粘贴 Token → 启用 → 点「**立即上传**」。
    首次会自动创建一个名为「年辽的知识工作台 · 数据（勿手改）」的**私有 Gist**，之后同步全自动：改动 5 秒后上传，打开页面/切回标签页时拉取，较新的一方生效。
-3. 手机打开 Pages 网址 → 设置页里粘贴同一个 Token → 启用 → 「拉取云端」。此后两端同一份书房。
+3. 手机打开 Pages 网址 → 设置页里粘贴同一个 Token **和同一个 Gist ID**（电脑上刷新设置页即可看到自动填入的 ID，或从 `gist.github.com` 那个 Gist 的网址末尾抄）→ 启用 → 「拉取云端」。此后两端同一份书房。⚠️ 手机端别留空 Gist ID 就点「立即上传」，那会另建一个 Gist 造成两端分家。
 4. Token 只存在各设备浏览器本机；Gist 里没有密钥，只有书房数据本身。
 
 ## 第五步 · 接通智能（约 1 分钟）
